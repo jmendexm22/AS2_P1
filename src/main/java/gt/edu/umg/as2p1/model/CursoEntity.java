@@ -9,19 +9,19 @@ package gt.edu.umg.as2p1.model;
  *
  * @author AK272DT
  */
-public class Curso {
+public class CursoEntity {
     private Integer id_course;
     private String name;
     private String description;
     
-    public Curso() {}
+    public CursoEntity() {}
     
-    public Curso(String name, String description){
+    public CursoEntity(String name, String description){
         this.name = name;
         this.description = description;
     }
     
-    public Curso(Integer id_course, String name, String description){
+    public CursoEntity(Integer id_course, String name, String description){
         this.id_course = id_course;
         this.name = name;
         this.description = description;
