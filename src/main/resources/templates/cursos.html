@@ -5,7 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-        <title>Bootstrap Example</title>
+    <title>Registro de cursos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,41 +21,39 @@ and open the template in the editor.
         }
     </style>
     <body>
-        <center>
-            <form>
-                <div class="col-lg-12">
-    
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <h1 align="center"><i>Registrar curso</i></h1>
-                                <div class="form-group">
-                                  <label for="exampleInputnombre">NOMBRE DEL CURSO</label>
-                                  <input type="text" class="form-control" id="exampleInputnombre" aria-describedby="nombre" placeholder="Enter curso">
-                                  <small id="nombrehelp" class="form-text text-muted"></small>
-                                </div>
-                            
-                        </div> 
-                        
-                        <div class="col-lg-12">
-                        <div class="col-lg-3">
-                            
-                                <div class="form-group">
-                                  <label for="exampleInputapellido">DESCRIPCION DEL CURSO</label>
-                                  <input type="text" class="form-control" id="exampleInputapellido" aria-describedby="curso" placeholder="Enter apellido">
-                                  <small id="nombrehelp" class="form-text text-muted"></small>
-                                </div>
-        
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <button type="button" class="btn btn-info">ENTER</button>
-                                        </div>
-                </div>
-                </div>
+    <center>
+        <form action="#" th:action="@{/postCurso}" th:object="${curso}" method="post">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h1 align="center"><i>Registrar curso</i></h1>
+                        <div class="form-group">
+                            <label for="exampleInputnombre">NOMBRE DEL CURSO</label>
+                            <input type="text" class="form-control" id="nombrecurso" aria-describedby="name" placeholder="Nombre del curso..." th:field="*{name}">
+                            <small id="nombrehelp" class="form-text text-muted"></small>
+                        </div>
+                    </div> 
 
-            </form>
-           
-        </center>
-
-    </body>
+                    <div class="col-lg-12">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="exampleInputapellido">DESCRIPCION DEL CURSO</label>
+                                <input type="text" class="form-control" id="exampleInputapellido" aria-describedby="description" placeholder="Descripción del curso..." th:field="*{description}">
+                                <small id="nombrehelp" class="form-text text-muted"></small>
+                            </div>
+                            
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <button type="submit" class="btn btn-info">CREAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </center>
+</body>
 </html>
