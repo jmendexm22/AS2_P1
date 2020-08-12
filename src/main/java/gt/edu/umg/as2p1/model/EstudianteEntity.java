@@ -16,8 +16,8 @@ public class EstudianteEntity {
     private String name;
     private String surname;
     private String email;
-    private LocalDateTime birthdate;
-    private String student_id;
+    private String birthdate;
+    private String studentID;
     private String phone1;
     private String phone2;
     private String address1;
@@ -25,25 +25,25 @@ public class EstudianteEntity {
     
     public EstudianteEntity() {}
     
-    public EstudianteEntity(String name, String surname, String email, LocalDateTime birthdate, String student_id, String phone1, String phone2, String address1, String address2){
+    public EstudianteEntity(String name, String surname, String email, String birthdate, String studentID, String phone1, String phone2, String address1, String address2){
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.birthdate = birthdate;
-        this.student_id = student_id;
+        this.studentID = studentID;
         this.phone1 = phone1;
         this.phone2 = phone2;
         this.address1 = address1; 
         this.address2 = address2;
     }
     
-    public EstudianteEntity(Integer id_student, String name, String surname, String email, LocalDateTime birthdate, String student_id, String phone1, String phone2, String address1, String address2){
+    public EstudianteEntity(Integer id_student, String name, String surname, String email, String birthdate, String studentID, String phone1, String phone2, String address1, String address2){
         this.id_student = id_student;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.birthdate = birthdate;
-        this.student_id = student_id;
+        this.studentID = studentID;
         this.phone1 = phone1;
         this.phone2 = phone2;
         this.address1 = address1; 
@@ -82,20 +82,20 @@ public class EstudianteEntity {
         this.email = email;
     }
     
-    public LocalDateTime getBirthdate(){
+    public String getBirthdate(){
         return birthdate;
     }
     
-    public void setBirthdate(LocalDateTime birthdate){
+    public void setBirthdate(String birthdate){
         this.birthdate = birthdate;
     }
     
     public String getStudentID(){
-        return student_id;
+        return studentID;
     }
     
-    public void setStudentID(String student_id){
-        this.student_id  = student_id;
+    public void setStudentID(String studentID){
+        this.studentID  = studentID;
     }
     
     public String getPhone1(){
