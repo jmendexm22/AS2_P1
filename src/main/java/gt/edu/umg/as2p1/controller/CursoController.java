@@ -37,7 +37,7 @@ public class CursoController {
 
         model.addAttribute("mensaje", mensaje);
 
-        return "index";
+        return "redirect:/getCurso";
     }
 
 }

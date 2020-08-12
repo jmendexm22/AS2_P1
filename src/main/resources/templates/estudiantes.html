@@ -27,21 +27,21 @@
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="name">NOMBRE</label>
-                            <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nombre del estudiante..." th:field="*{name}">
+                            <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nombre del estudiante..." th:field="*{name}" required>
                             <small id="nameHelp" class="form-text text-muted"></small>
                         </div>
                     </div> 
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="surname">APELLIDO</label>
-                            <input type="text" class="form-control" id="surname" aria-describedby="apellido" placeholder="Apellido del estudiante..." th:field="*{surname}">
+                            <input type="text" class="form-control" id="surname" aria-describedby="apellido" placeholder="Apellido del estudiante..." th:field="*{surname}" required>
                             <small id="surnameHelp" class="form-text text-muted"></small>
                         </div>
                     </div> 
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="email">CORREO ELECTRÓNICO</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Correo electrónico..." th:field="*{email}">
+                            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Correo electrónico..." th:field="*{email}" required>
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
                     </div>
@@ -51,26 +51,26 @@
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="birthdate">FECHA DE CUMPLEAÑOS</label>
-                            <input type="text" class="form-control" id="birthdate" aria-describedby="cumpleaños" placeholder="yyyy-mm-dd | 1996-05-23" th:field="*{birthdate}">
+                            <input type="text" class="form-control" id="birthdate" aria-describedby="cumpleaños" placeholder="yyyy-mm-dd | 1996-05-23" th:field="*{birthdate}" required>
                             <small id="birthdateHelp" class="form-text text-muted"></small>
                         </div>
                     </div> 
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="studentID">ID ESTUDIANTE</label>
-                            <input type="text" class="form-control" id="exampleInputid" aria-describedby="id estudiante" placeholder="Ingrese el ID del estudiante..." th:field="*{studentID}">
+                            <input type="text" class="form-control" id="exampleInputid" aria-describedby="id estudiante" placeholder="Ingrese el ID del estudiante..." th:field="*{studentID}" required>
                             <small id="studentIDHelp" class="form-text text-muted"></small>
                         </div>
                     </div> 
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="phone1">TELEFONO1</label>
-                            <input type="text" class="form-control" id="phone1" aria-describedby="telefono1" placeholder="Teléfono principal..." th:field="*{phone1}">
+                            <input type="text" class="form-control" id="phone1" aria-describedby="telefono1" placeholder="Teléfono principal..." th:field="*{phone1}" required>
                             <small id="phone1Help" class="form-text text-muted"></small>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="form-group">
@@ -82,7 +82,7 @@
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="address1">DIRECCION1</label>
-                            <input type="text" class="form-control" id="address1" aria-describedby="address1" placeholder="Dirección principal..." th:field="*{address1}">
+                            <input type="text" class="form-control" id="address1" aria-describedby="address1" placeholder="Dirección principal..." th:field="*{address1}" required>
                             <small id="address1Help" class="form-text text-muted"></small>
                         </div>
                     </div> 
@@ -95,9 +95,12 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
-                            <div class="col-lg-10">
+                            <div class="col-lg-3">
                                 <button type="submit" class="btn btn-info">CREAR</button>
                             </div>
+                            <div class="col-lg-3">
+                                <a class="btn btn-default" href="/">REGRESAR</a>
+                            </div>   
                         </div>
                     </div>
                 </div>

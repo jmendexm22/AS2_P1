@@ -37,7 +37,7 @@ public class EstudianteController {
 
         model.addAttribute("mensaje", mensaje);
         
-        return "index";
+        return "redirect:/getEstudiante";
     }
     
 }
