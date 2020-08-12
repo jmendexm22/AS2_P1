@@ -16,24 +16,24 @@ import java.sql.SQLException;
  * @author AK272DT
  */
 public class CursoDAOImpl implements ICursoDAO {
+
     @Override
-    public boolean insertarCurso(CursoEntity curso){
+    public boolean insertarCurso(CursoEntity curso) {
         Connection connection = ConnectionFactory.getConnection();
-        
-        try{
+
+        try {
             PreparedStatement ps = connection.prepareStatement("INSERT INTO t2_course VALUES (NULL, ?, ?)");
             ps.setString(1, curso.getName());
             ps.setString(2, curso.getDescription());
             int i = ps.executeUpdate();
-            
-            if (i == 1){
+
+            if (i == 1) {
                 return true;
             }
-        }
-        catch (SQLException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
+
         return false;
     }
 }
