@@ -5,7 +5,6 @@
  */
 package gt.edu.umg.as2p1.controller;
 
-import gt.edu.umg.as2p1.dao.CursoDAO;
 import gt.edu.umg.as2p1.dao.CursoDAOImpl;
 import gt.edu.umg.as2p1.model.CursoEntity;
 import org.springframework.stereotype.Controller;
@@ -13,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import gt.edu.umg.as2p1.dao.ICursoDAO;
 
 /**
  *

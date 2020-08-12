@@ -15,7 +15,7 @@ import java.sql.SQLException;
  *
  * @author AK272DT
  */
-public class CursoDAOImpl implements CursoDAO {
+public class CursoDAOImpl implements ICursoDAO {
     @Override
     public boolean insertarCurso(CursoEntity curso){
         Connection connection = ConnectionFactory.getConnection();

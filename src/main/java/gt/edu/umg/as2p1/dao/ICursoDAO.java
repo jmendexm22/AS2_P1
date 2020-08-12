@@ -11,6 +11,6 @@ import gt.edu.umg.as2p1.model.CursoEntity;
  *
  * @author AK272DT
  */
-public interface CursoDAO {
+public interface ICursoDAO {
     boolean insertarCurso(CursoEntity curso);
 }
