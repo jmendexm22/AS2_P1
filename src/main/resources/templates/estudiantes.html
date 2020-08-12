@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Bootstrap Example</title>
+        <title>Registro de estudiantes</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,112 +17,93 @@
                 background-color: beige;
             }
         </style>
+    </head>
     <body>
         <h1 align="center"><i>Registrar estudiante</i></h1>
     <center>
-        <form>
-            
-        </form>
+        <form action="#" th:action="@{/postEstudiante}" th:object="${estudiante}" method="post">
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-3">
-
                         <div class="form-group">
-                            <label for="exampleInputnombre">NOMBRE</label>
-                            <input type="text" class="form-control" id="exampleInputnombre" aria-describedby="nombre" placeholder="Enter nombre">
-                            <small id="nombrehelp" class="form-text text-muted"></small>
+                            <label for="name">NOMBRE</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nombre del estudiante..." th:field="*{name}">
+                            <small id="nameHelp" class="form-text text-muted"></small>
                         </div>
-
                     </div> 
                     <div class="col-lg-3">
-
                         <div class="form-group">
-                            <label for="exampleInputapellido">APELLIDO</label>
-                            <input type="text" class="form-control" id="exampleInputapellido" aria-describedby="apellido" placeholder="Enter apellido">
-                            <small id="nombrehelp" class="form-text text-muted"></small>
+                            <label for="surname">APELLIDO</label>
+                            <input type="text" class="form-control" id="surname" aria-describedby="apellido" placeholder="Apellido del estudiante..." th:field="*{surname}">
+                            <small id="surnameHelp" class="form-text text-muted"></small>
                         </div>
-
                     </div> 
                     <div class="col-lg-3">
-
                         <div class="form-group">
-                            <label for="exampleInputEmail1">EMAIL ADDRESS</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="email">CORREO ELECTRÓNICO</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Correo electrónico..." th:field="*{email}">
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
-
                     </div>
                 </div>
 
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-3">
-
-                            <div class="form-group">
-                                <label for="exampleInputnombre">FECHA DE CUMPLEAÑOS</label>
-                                <input type="text" class="form-control" id="exampleInputcumpleaños" aria-describedby="cumpleaños" placeholder="Enter cumpleaños">
-                                <small id="cumpleañoshelp" class="form-text text-muted"></small>
-                            </div>
-
-                        </div> 
-                        <div class="col-lg-3">
-
-                            <div class="form-group">
-                                <label for="exampleInputapellido">ID ESTUDIANTE</label>
-                                <input type="text" class="form-control" id="exampleInputid" aria-describedby="id estudiante" placeholder="Enter ID estudiante">
-                                <small id="idestudiantehelp" class="form-text text-muted"></small>
-                            </div>
-
-                        </div> 
-                        <div class="col-lg-3">
-
-                            <div class="form-group">
-                                <label for="exampleInputtelefono1">TELEFONO1</label>
-                                <input type="txt" class="form-control" id="exampleInputtelefono1" aria-describedby="TELEFONO1" placeholder="Enter telefono1">
-                                <small id="telefono1Help" class="form-text text-muted"></small>
-                            </div>
-
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="birthdate">FECHA DE CUMPLEAÑOS</label>
+                            <input type="text" class="form-control" id="birthdate" aria-describedby="cumpleaños" placeholder="yyyy-mm-dd | 1996-05-23" th:field="*{birthdate}">
+                            <small id="birthdateHelp" class="form-text text-muted"></small>
                         </div>
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-lg-3">
-
-                                    <div class="form-group">
-                                        <label for="exampleInputtelefono">TELEFONO2</label>
-                                        <input type="text" class="form-control" id="exampleInputtelefono2" aria-describedby="telefono2" placeholder="Enter telefono2">
-                                        <small id="telefono2help" class="form-text text-muted"></small>
-                                    </div>
-
-                                </div> 
-                                <div class="col-lg-3">
-
-                                    <div class="form-group">
-                                        <label for="exampleInputlledireccion1">DIRECCION1</label>
-                                        <input type="text" class="form-control" id="exampleInputlledireccion1" aria-describedby="DIRECCION1" placeholder="Enter  direccion1">
-                                        <small id="direccion1help" class="form-text text-muted"></small>
-                                    </div>
-
-                                </div> 
-                                <div class="col-lg-3">
-
-                                    <div class="form-group">
-                                        <label for="exampleInputtedireccion2">DIRECCION2</label>
-                                        <input type="txt" class="form-control" id="exampleInputtedireccion2" aria-describedby="DIRECCION2" placeholder="Enter direccion2">
-                                        <small id="direccion2Help" class="form-text text-muted"></small>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-10">
-                                            <button type="button" class="btn btn-info">ENTER</button>
-                                        </div>
-                                        </form>
-
-                                        </center>
-
-                                        </body>
-                                        </head>
-
-                                        </html>
-                                        <!-- end document-->
+                    </div> 
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="studentID">ID ESTUDIANTE</label>
+                            <input type="text" class="form-control" id="exampleInputid" aria-describedby="id estudiante" placeholder="Ingrese el ID del estudiante..." th:field="*{studentID}">
+                            <small id="studentIDHelp" class="form-text text-muted"></small>
+                        </div>
+                    </div> 
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="phone1">TELEFONO1</label>
+                            <input type="text" class="form-control" id="phone1" aria-describedby="telefono1" placeholder="Teléfono principal..." th:field="*{phone1}">
+                            <small id="phone1Help" class="form-text text-muted"></small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="phone2">TELEFONO2</label>
+                            <input type="text" class="form-control" id="phone2" aria-describedby="telefono2" placeholder="Teléfono secundario..." th:field="*{phone2}">
+                            <small id="phone2Help" class="form-text text-muted"></small>
+                        </div>
+                    </div> 
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="address1">DIRECCION1</label>
+                            <input type="text" class="form-control" id="address1" aria-describedby="address1" placeholder="Dirección principal..." th:field="*{address1}">
+                            <small id="address1Help" class="form-text text-muted"></small>
+                        </div>
+                    </div> 
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="address2">DIRECCION2</label>
+                            <input type="text" class="form-control" id="address2" aria-describedby="address2" placeholder="Dirección secundaria..." th:field="*{address2}">
+                            <small id="address2Help" class="form-text text-muted"></small>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <button type="submit" class="btn btn-info">CREAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </center>
+</body>
+</html>
+<!-- end document-->
