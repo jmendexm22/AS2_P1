@@ -13,6 +13,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import gt.edu.umg.as2p1.dao.ICursoDAO;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *
@@ -63,7 +70,7 @@ public class CursoController {
                 CursoEntity curso = new CursoEntity();
 
                 curso.setName(parts[0]);
-                curso.setDescription(parts[1]); 
+                curso.setDescription(parts[1]);
 
                 CursoDAOImpl enviar = new CursoDAOImpl();
                 enviar.insertarCurso(curso);
@@ -82,5 +89,4 @@ public class CursoController {
 
     //////////////////////////////////////
     ///////////////////////////////////////////
-
 }

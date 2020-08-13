@@ -7,39 +7,44 @@ package gt.edu.umg.as2p1.controller;
 
 import gt.edu.umg.as2p1.dao.EstudianteDAOImpl;
 import gt.edu.umg.as2p1.model.EstudianteEntity;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *
  * @author AK272DT
  */
-
 @Controller
 public class EstudianteController {
-    
+
     @GetMapping("/getEstudiante")
     public String getEstudiante(Model model) {
         model.addAttribute("estudiante", new EstudianteEntity());
         return "estudiantes";
-    } 
-    
+    }
+
     @PostMapping("/postEstudiante")
-    public String postEstudiante(@ModelAttribute EstudianteEntity estudiante, Model model) {     
-        
+    public String postEstudiante(@ModelAttribute EstudianteEntity estudiante, Model model) {
+
         EstudianteDAOImpl estudianteDAO = new EstudianteDAOImpl();
         boolean status = estudianteDAO.insertarEstudiante(estudiante);
-        
+
         String mensaje = (status) ? "Insertado correctamente!" : "No se pudo insertar el registro...";
 
         model.addAttribute("mensaje", mensaje);
-        
+
         return "redirect:/getEstudiante";
     }
-
 
     ///////////////////////////////
 /////////////////////////////////////
@@ -60,40 +65,29 @@ public class EstudianteController {
 
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
+                String[] parts = line.split(";");
+                EstudianteEntity curso = new EstudianteEntity();
+                curso.setName(parts[0]);
+                curso.setSurname(parts[1]);
+                curso.setEmail(parts[2]);
+                curso.setBirthdate(parts[3]);
+                curso.setStudentID(parts[4]);
+                curso.setPhone1(parts[5]);
+                curso.setPhone2(parts[6]);
+                curso.setAddress1(parts[7]);
+                curso.setAddress2(parts[8]);
 
-                //String[] parts = line.split(";");
-                //CursoEntity curso = new CursoEntity();
-                    //curso.setName(parts[0]);
-                //curso.setDescription(parts[1]);
+                EstudianteDAOImpl enviar = new EstudianteDAOImpl();
+                enviar.insertarEstudiante(curso);
 
-                //CursoDAOImpl enviar = new CursoDAOImpl();
-                //enviar.insertarCurs o(curso);
-                                
-                                String[] parts =line.split(";");
-                                 EstudianteEntity curso = new  EstudianteEntity();
-                                curso.setName(parts[0]);
-                                curso.setSurname(parts[1]);
-                                curso.setEmail(parts[2]);
-                                curso.setBirthdate(parts[3]);
-                                curso.setStudentID(parts[4]);
-                                curso.setPhone1(parts[5]);
-                                curso.setPhone2(parts[6]);
-                                curso.setAddress1(parts[7]);
-                                curso.setAddress2(parts[8]);
-                                
-                                EstudianteDAOImpl enviar = new EstudianteDAOImpl();
-                                enviar.insertarEstudiante(curso);
-                               
-                                if(enviar.insertarEstudiante(curso) == false) {
-                                    
-                                    System.out.print("cierto");
-                                }else {
-                                    System.out.print("nooooo");
-                                }
-                                
-                              
-                       
-                        }
+                if (enviar.insertarEstudiante(curso) == false) {
+
+                    System.out.print("cierto");
+                } else {
+                    System.out.print("nooooo");
+                }
+
+            }
             br.close();
 
         } catch (IOException e) {
@@ -107,5 +101,4 @@ public class EstudianteController {
     }
 
     ///////////////////////////////////////////
-    
 }

@@ -23,65 +23,34 @@ and open the template in the editor.
         </style>
     </head>
 
-  
+
     <body class="cotainer-fluid">
-        
-        <div class="row">
-        <div class="col-md-12">
-               <h1 align="center"><i>Análisis de Sistemas II - Equipo #2</i></h1>
-    <center>
-        <div class="col-lg-12">
-            <div class="row">
+        <div>
+            <div class ="row">
+                <h1 align="center"><i>Análisis de Sistemas II - Equipo #2</i></h1>
                 <div class="col-lg-3">
-                    <a class="btn btn-primary" href="/getEstudiante">Crear estudiante</a>
+                    <h2>Registrar Curso</h2>
+                    <a class="btn btn-primary" href="/getCurso">Nuevo +</a>
+                </div>
+                <div class="col-md-3">
+                    <h2>Importar Cursos</h2>
+                    <form method="POST" action="/CargaCursos" enctype="multipart/form-data">
+                        <input type="file" name="file" /><br/><br/>
+                        <input class="btn btn-primary" type="submit" value="Importar" />
+                    </form>
                 </div>
                 <div class="col-lg-3">
-                    <a class="btn btn-default" href="/getCurso">Crear curso</a>
+                    <h2>Registrar Estudiante</h2>
+                    <a class="btn btn-primary" href="/getEstudiante">Nuevo +</a>
                 </div>
-                <div class="col-lg-3">
-                    <button type="button" class="btn btn-warning" data-toggle="button" aria-pressed="false">
-                        Importar estudiantes.
-                    </button>
-                </div>
-                <div class="col-lg-3">
-                    <button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false">
-                        Importar cursos.
-                    </button>
+                <div class="col-md-3">
+                    <h2>Importar Estudiantes</h2>
+                    <form method="POST" action="/CargaEstudiantes" enctype="multipart/form-data">
+                        <input type="file" name="file" /><br/><br/>
+                        <input class="btn btn-primary" type="submit" value="Importar" />
+                    </form>
                 </div>
             </div>
-    </center>
-
-            
-        </div>
-    </div>
-        
-
-    <!-- /////////////////////////////////////////////////////////// -->
-    <div>
-        <div class ="row">
-            <div class="col-md-6">
-                <h1>Cargar Cursos SCV</h1>
-
-                <form method="POST" action="/CargaCursos" enctype="multipart/form-data">
-                    <input type="file" name="file" /><br/><br/>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-            <div class="col-md-6">
-                  <h1>Cargar Datos Estudiantes SCV</h1>
-
-                <form method="POST" action="/CargaEstudiantes" enctype="multipart/form-data">
-                    <input type="file" name="file" /><br/><br/>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-        </div>
-
-        
-
-
-        <!-- /////////////////////////////////////////////////////////// -->
-
-    </div>    
-</body>
+        </div>    
+    </body>
 </html>
