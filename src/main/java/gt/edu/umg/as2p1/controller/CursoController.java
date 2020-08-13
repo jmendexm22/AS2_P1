@@ -40,4 +40,47 @@ public class CursoController {
         return "redirect:/getCurso";
     }
 
+    /////////////////////////////////////
+    @PostMapping("/CargaCursos") // //new annotation since 4.3
+    public String singleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes, Model model) {
+
+        if (file.isEmpty()) {
+            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
+            return "redirect:uploadStatus";
+        }
+
+        try {
+            byte[] bytes = file.getBytes();
+            ByteArrayInputStream inputFilestream = new ByteArrayInputStream(bytes);
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputFilestream));
+            String line = "";
+
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+
+                String[] parts = line.split(";");
+
+                CursoEntity curso = new CursoEntity();
+
+                curso.setName(parts[0]);
+                curso.setDescription(parts[1]); 
+
+                CursoDAOImpl enviar = new CursoDAOImpl();
+                enviar.insertarCurso(curso);
+            }
+            br.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //List<CursoEntity> persons = new ArrayList<CursoEntity>();
+        //model.addAttribute("curso", new CursoEntity());
+        //return "cursos";
+        return "index";
+    }
+
+    //////////////////////////////////////
+    ///////////////////////////////////////////
+
 }
