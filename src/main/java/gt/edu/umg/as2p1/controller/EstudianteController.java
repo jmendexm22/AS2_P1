@@ -66,25 +66,28 @@ public class EstudianteController {
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
                 String[] parts = line.split(";");
-                EstudianteEntity curso = new EstudianteEntity();
-                curso.setName(parts[0]);
-                curso.setSurname(parts[1]);
-                curso.setEmail(parts[2]);
-                curso.setBirthdate(parts[3]);
-                curso.setStudentID(parts[4]);
-                curso.setPhone1(parts[5]);
-                curso.setPhone2(parts[6]);
-                curso.setAddress1(parts[7]);
-                curso.setAddress2(parts[8]);
+                EstudianteEntity estudiante = new EstudianteEntity();
+                estudiante.setName(parts[0]);
+                estudiante.setSurname(parts[1]);
+                estudiante.setEmail(parts[2]);
+                estudiante.setBirthdate(parts[3]);
+                estudiante.setStudentID(parts[4]);
+                estudiante.setPhone1(parts[5]);
+                estudiante.setPhone2(parts[6]);
+                estudiante.setAddress1(parts[7]);
+                estudiante.setAddress2(parts[8]);
 
                 EstudianteDAOImpl enviar = new EstudianteDAOImpl();
-                enviar.insertarEstudiante(curso);
+                // enviar.insertarEstudiante(curso);
 
-                if (enviar.insertarEstudiante(curso) == false) {
+                int correctos = 0, incorrectos = 0;
 
-                    System.out.print("cierto");
+                if (enviar.insertarEstudiante(estudiante) == false) {
+                    // System.out.print("cierto");
+                    correctos++;
                 } else {
-                    System.out.print("nooooo");
+                    //System.out.print("nooooo");
+                    incorrectos++;
                 }
 
             }

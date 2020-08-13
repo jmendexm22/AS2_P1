@@ -73,7 +73,17 @@ public class CursoController {
                 curso.setDescription(parts[1]);
 
                 CursoDAOImpl enviar = new CursoDAOImpl();
-                enviar.insertarCurso(curso);
+                // enviar.insertarCurso(curso);
+                
+                int correctos = 0, incorrectos = 0;
+
+                if (enviar.insertarCurso(curso) == false) {
+                    // System.out.print("cierto");
+                    correctos++;
+                } else {
+                    //System.out.print("nooooo");
+                    incorrectos++;
+                }
             }
             br.close();
 
